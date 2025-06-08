@@ -1,0 +1,9 @@
+services:
+  fastapi_app:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./city_temperature_management.db:/app/city_temperature_management.db 
