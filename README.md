@@ -48,14 +48,14 @@ city_temperature_management_api
 ```
 
 
-### How to run the application?
+## How to run the application?
 
-## Running with one simple command
+### Running with one simple command
 run:    `docker-compose up --build`
 open:   [FastAPI app](http://127.0.0.1:8000/docs/)
 
 
-# Step by step instructions:
+### Step by step instructions:
 1. Create a file .env and fill it out according to the env.sample
 2. Create & activate venv:
     `python -m venv venv`
