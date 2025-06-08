@@ -17,6 +17,7 @@ The FastAPI application that manages city data and its corresponding temperature
 - retrieves the current temperature data for all cities in the database from APIWeather and stores that data in the database
 
 ## The project structure:
+```
 city_temperature_management_api
 ├── alembic/
 ├── src
@@ -44,7 +45,7 @@ city_temperature_management_api
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-
+```
 
 
 ### How to run the application?
