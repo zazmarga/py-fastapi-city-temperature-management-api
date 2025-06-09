@@ -18,7 +18,8 @@ async def create_new_city(db: AsyncSession, city: schemas.CityNew):
     )
     result = await db.execute(query)
     await db.commit()
-    response = {**city.model_dump(), "id": result.lastrowid}
+    new_id = result.inserted_primary_key[0] 
+    response = {**city.model_dump(), "id": new_id}
     return response
    
 

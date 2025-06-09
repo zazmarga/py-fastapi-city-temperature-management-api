@@ -20,6 +20,7 @@ The FastAPI application that manages city data and its corresponding temperature
 ```
 city_temperature_management_api
 ├── alembic/
+├── data/ (for ..db)
 ├── src
 │   └── cities
 │   │   ├── __init___.py

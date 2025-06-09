@@ -26,11 +26,12 @@ async def create_new_item_temperature(
         city_id=city_id,
         date_time=datetime.now(timezone.utc),
         temperature=temperature
-    ).returning(models.Temperature)
+    ).returning(models.Temperature.id)
     
     result = await db.execute(query)
     await db.commit()
-    temperature_item = result.fetchone()[0]
+    new_id = result.fetchone()[0]
+    temperature_item = await db.get(models.Temperature, new_id)
     await db.refresh(temperature_item)
     response = schemas.Temperature.model_validate(temperature_item)
     return response

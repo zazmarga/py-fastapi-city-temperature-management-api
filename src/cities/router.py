@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.dependencies import get_db
@@ -49,7 +49,8 @@ async def delete_city(
     db: AsyncSession = Depends(get_db), 
 ):
     city = await validate_city_exists(db=db, city_id=city_id)
-    return await crud.delete_city_by_id(db=db, city_id=city_id)
+    await crud.delete_city_by_id(db=db, city_id=city_id)
+    return Response(status_code=204)
 
 
 @router.put("/cities/{city_id}/", response_model=schemas.City)

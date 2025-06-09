@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 from src.database import Base
-from src.temperature import models
 
 class City(Base):
     __tablename__ = "city"
@@ -11,4 +10,4 @@ class City(Base):
     name = Column(String(64), nullable=False, unique=True)
     additional_info =Column(String(255), nullable=True)
 
-    temperatures = relationship(models.Temperature, back_populates="city")
+    temperatures = relationship("Temperature", back_populates="city")
